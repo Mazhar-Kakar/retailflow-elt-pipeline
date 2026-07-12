@@ -1,18 +1,12 @@
 import pandas as pd
-import logging
 from ingestion.extraction.extractor import extract
 from ingestion.metadata.metadata import update_last_loaded_timestamp
 from ingestion.validation.validator import validate
 from ingestion.load.s3_loader import s3_upload
-import sys
+from ingestion.logs.logger import setup_logging
+import logging
 
-logging.basicConfig(
-    level=logging.INFO,
-    filename="ingestion/logs/logs.log",
-    filemode="a",
-    format="%(asctime)s | %(levelname)s | %(message)s"
-)
-    
+setup_logging()
 logger = logging.getLogger(__name__)
 
 
@@ -29,7 +23,7 @@ def store_pipeline():
 
         if df.empty:
             logger.info(f"No new records found for {SOURCE_TABLE}.")
-            sys.exit(0)
+            return
         
         logger.info("Store data extracted")
         

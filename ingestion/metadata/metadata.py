@@ -6,7 +6,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-
 def update_last_loaded_timestamp(table_name, updated_timestamp):
     try:
         with engine.begin() as connection:

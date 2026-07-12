@@ -48,3 +48,34 @@ KeyError: 'erp.products'
 2026-07-12 09:32:53,089 | INFO | stores.parquet is uploaded at: raw/stores/load_date=2026-07-12/stores.parquet
 2026-07-12 09:32:53,105 | INFO | incremental timestamp updated
 2026-07-12 09:32:53,105 | INFO | Store pipeline completed
+2026-07-12 13:26:51,109 | INFO | order_item pipeline started
+2026-07-12 13:26:51,164 | INFO | Incremental load
+2026-07-12 13:26:51,171 | INFO | No new records found for erp.order_items.
+2026-07-12 13:38:44,167 | INFO | order_item pipeline started
+2026-07-12 13:38:44,212 | INFO | Incremental load
+2026-07-12 13:38:44,221 | INFO | No new records found for erp.order_items.
+2026-07-12 13:38:44,221 | ERROR | order_item pipeline failed
+Traceback (most recent call last):
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/ingestion/pipelines/order_item_pipeline.py", line 25, in order_item_pipeline
+    sys.exit(0)
+    ^^^
+NameError: name 'sys' is not defined. Did you forget to import 'sys'
+2026-07-12 13:39:19,177 | INFO | order_item pipeline started
+2026-07-12 13:39:19,203 | INFO | Incremental load
+2026-07-12 13:39:19,211 | INFO | No new records found for erp.order_items.
+2026-07-12 13:40:33,910 | INFO | order_item pipeline started
+2026-07-12 13:40:33,945 | ERROR | order_item pipeline failed
+Traceback (most recent call last):
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/ingestion/pipelines/order_item_pipeline.py", line 21, in order_item_pipeline
+    df = extract(SOURCE_TABLE)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/ingestion/extraction/extractor.py", line 44, in extract
+    logger.info("Incremental load")
+    ^^^^^^
+NameError: name 'logger' is not defined
+2026-07-12 13:40:46,540 | INFO | order_item pipeline started
+2026-07-12 13:40:46,573 | INFO | Incremental load
+2026-07-12 13:40:46,580 | INFO | No new records found for erp.order_items.
+2026-07-12 13:44:33,725 | INFO | Store pipeline started
+2026-07-12 13:44:33,755 | INFO | Incremental load
+2026-07-12 13:44:33,757 | INFO | No new records found for erp.stores.

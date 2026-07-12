@@ -1,0 +1,50 @@
+2026-07-12 09:18:08,746 | INFO | Customer pipeline started
+2026-07-12 09:18:08,770 | INFO | Full load
+2026-07-12 09:18:08,788 | INFO | Customer data extracted
+2026-07-12 09:18:08,790 | INFO | erp.customers validation passed.
+2026-07-12 09:18:08,790 | INFO | Extracted 4000 records from erp.customers
+2026-07-12 09:18:10,978 | INFO | customers.parquet is uploaded at: raw/customers/load_date=2026-07-12/customers.parquet
+2026-07-12 09:18:10,993 | INFO | incremental timestamp updated
+2026-07-12 09:18:10,994 | INFO | Customer pipeline completed
+2026-07-12 09:18:32,353 | INFO | order_item pipeline started
+2026-07-12 09:18:32,385 | INFO | Full load
+2026-07-12 09:18:32,594 | INFO | order_item data extracted
+2026-07-12 09:18:32,596 | INFO | erp.order_items validation passed.
+2026-07-12 09:18:32,596 | INFO | Extracted 30021 records from erp.order_items
+2026-07-12 09:18:37,242 | INFO | order_items.parquet is uploaded at: raw/order_items/load_date=2026-07-12/order_items.parquet
+2026-07-12 09:18:37,258 | INFO | incremental timestamp updated
+2026-07-12 09:18:37,258 | INFO | order_item pipeline completed
+2026-07-12 09:23:40,669 | INFO | order pipeline started
+2026-07-12 09:23:40,690 | INFO | Full load
+2026-07-12 09:23:40,731 | INFO | order data extracted
+2026-07-12 09:23:40,734 | INFO | erp.orders validation passed.
+2026-07-12 09:23:40,734 | INFO | Extracted 10000 records from erp.orders
+2026-07-12 09:23:54,265 | INFO | orders.parquet is uploaded at: raw/orders/load_date=2026-07-12/orders.parquet
+2026-07-12 09:23:54,281 | INFO | incremental timestamp updated
+2026-07-12 09:23:54,281 | INFO | order pipeline completed
+2026-07-12 09:26:49,575 | INFO | product pipeline started
+2026-07-12 09:26:49,576 | ERROR | product pipeline failed
+Traceback (most recent call last):
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/ingestion/pipelines/product_pipeline.py", line 26, in <module>
+    df = extract(SOURCE_TABLE)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/ingestion/extraction/extractor.py", line 14, in extract
+    load_validation_config()[table_name]["columns"]
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'erp.products'
+2026-07-12 09:29:20,712 | INFO | product pipeline started
+2026-07-12 09:29:20,754 | INFO | Full load
+2026-07-12 09:29:20,762 | INFO | product data extracted
+2026-07-12 09:29:20,764 | INFO | erp.products validation passed.
+2026-07-12 09:29:20,764 | INFO | Extracted 1000 records from erp.products
+2026-07-12 09:29:22,505 | INFO | products.parquet is uploaded at: raw/products/load_date=2026-07-12/products.parquet
+2026-07-12 09:29:22,519 | INFO | incremental timestamp updated
+2026-07-12 09:29:22,519 | INFO | product pipeline completed
+2026-07-12 09:32:51,648 | INFO | Store pipeline started
+2026-07-12 09:32:51,674 | INFO | Full load
+2026-07-12 09:32:51,678 | INFO | Store data extracted
+2026-07-12 09:32:51,681 | INFO | erp.stores validation passed.
+2026-07-12 09:32:51,681 | INFO | Extracted 25 records from erp.stores
+2026-07-12 09:32:53,089 | INFO | stores.parquet is uploaded at: raw/stores/load_date=2026-07-12/stores.parquet
+2026-07-12 09:32:53,105 | INFO | incremental timestamp updated
+2026-07-12 09:32:53,105 | INFO | Store pipeline completed

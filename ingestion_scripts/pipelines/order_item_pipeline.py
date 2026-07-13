@@ -1,22 +1,21 @@
 import pandas as pd
-from ingestion.extraction.extractor import extract
-from ingestion.metadata.metadata import update_last_loaded_timestamp
-from ingestion.validation.validator import validate
-from ingestion.load.s3_loader import s3_upload
-from ingestion.logs.logger import setup_logging
+from ingestion_scripts.extraction.extractor import extract
+from ingestion_scripts.metadata.metadata import update_last_loaded_timestamp
+from ingestion_scripts.validation.validator import validate
+from ingestion_scripts.load.s3_loader import s3_upload
+from ingestion_scripts.logs.logger import setup_logging
 import logging
 
 setup_logging()
 logger = logging.getLogger(__name__)
 
+SOURCE_TABLE = "erp.order_items"
+DATASET = "order_items"
 
-SOURCE_TABLE = "erp.products"
-DATASET = "products"
-
-def product_pipeline():
+def order_item_pipeline():
     
     try:
-        logger.info("product pipeline started")
+        logger.info("order_item pipeline started")
         
         # Extract
         df = extract(SOURCE_TABLE)
@@ -25,7 +24,7 @@ def product_pipeline():
             logger.info(f"No new records found for {SOURCE_TABLE}.")
             return
         
-        logger.info("product data extracted")
+        logger.info("order_item data extracted")
         
         
         # validate
@@ -44,14 +43,17 @@ def product_pipeline():
         )
         logger.info("incremental timestamp updated")
         
-        logger.info("product pipeline completed")
+        logger.info("order_item pipeline completed")
         
     except Exception:
-        logger.exception("product pipeline failed")
+        logger.exception("order_item pipeline failed")
         raise
 
-
 if __name__ == "__main__":
-    product_pipeline()
+    order_item_pipeline()
 
 
+
+            
+            
+            

@@ -8,6 +8,7 @@ dependencies = [
     "boto3>=1.43.45",
     "dbt-core>=1.11.12",
     "dbt-postgres>=1.10.2",
+    "dbt-snowflake>=1.11.6",
     "pandas>=3.0.3",
     "psycopg2-binary>=2.9.12",
     "pyarrow>=25.0.0",

@@ -1,0 +1,144 @@
+2026-07-13 09:10:59,455 | INFO | Customer pipeline started
+2026-07-13 09:10:59,488 | INFO | Full load
+2026-07-13 09:10:59,504 | INFO | Customer data extracted
+2026-07-13 09:10:59,506 | INFO | erp.customers validation passed.
+2026-07-13 09:10:59,506 | INFO | Extracted 4000 records from erp.customers
+2026-07-13 09:11:01,788 | INFO | customers.parquet is uploaded at: raw/customers/load_date=20260713/customers.parquet_20260713091059.parquet
+2026-07-13 09:11:01,797 | INFO | incremental timestamp updated
+2026-07-13 09:11:01,797 | INFO | Customer pipeline completed
+2026-07-13 09:11:25,060 | INFO | order pipeline started
+2026-07-13 09:11:25,091 | INFO | Full load
+2026-07-13 09:11:25,169 | INFO | order data extracted
+2026-07-13 09:11:25,172 | INFO | erp.orders validation passed.
+2026-07-13 09:11:25,173 | INFO | Extracted 10000 records from erp.orders
+2026-07-13 09:11:28,228 | INFO | orders.parquet is uploaded at: raw/orders/load_date=20260713/orders.parquet_20260713091125.parquet
+2026-07-13 09:11:28,243 | INFO | incremental timestamp updated
+2026-07-13 09:11:28,243 | INFO | order pipeline completed
+2026-07-13 09:11:39,007 | INFO | order_item pipeline started
+2026-07-13 09:11:39,030 | INFO | Full load
+2026-07-13 09:11:39,232 | INFO | order_item data extracted
+2026-07-13 09:11:39,234 | INFO | erp.order_items validation passed.
+2026-07-13 09:11:39,234 | INFO | Extracted 30021 records from erp.order_items
+2026-07-13 09:11:42,020 | INFO | order_items.parquet is uploaded at: raw/order_items/load_date=20260713/order_items.parquet_20260713091139.parquet
+2026-07-13 09:11:42,036 | INFO | incremental timestamp updated
+2026-07-13 09:11:42,036 | INFO | order_item pipeline completed
+2026-07-13 09:12:07,901 | INFO | product pipeline started
+2026-07-13 09:12:07,933 | INFO | Full load
+2026-07-13 09:12:07,953 | INFO | product data extracted
+2026-07-13 09:12:07,956 | INFO | erp.products validation passed.
+2026-07-13 09:12:07,957 | INFO | Extracted 1000 records from erp.products
+2026-07-13 09:12:09,621 | INFO | products.parquet is uploaded at: raw/products/load_date=20260713/products.parquet_20260713091208.parquet
+2026-07-13 09:12:09,636 | INFO | incremental timestamp updated
+2026-07-13 09:12:09,636 | INFO | product pipeline completed
+2026-07-13 09:12:59,309 | INFO | Store pipeline started
+2026-07-13 09:12:59,328 | INFO | Full load
+2026-07-13 09:12:59,341 | ERROR | Extraction failed: Execution failed on sql '
+        SELECT
+            store_id, store_name, city, province, country, created_timestamp, updated_timestamp, is_activ
+        FROM erp.stores 
+        ORDER BY updated_timestamp ASC
+        ': (psycopg2.errors.UndefinedColumn) column "is_activ" does not exist
+LINE 3: ...nce, country, created_timestamp, updated_timestamp, is_activ
+                                                               ^
+HINT:  Perhaps you meant to reference the column "stores.is_active".
+
+[SQL: 
+        SELECT
+            store_id, store_name, city, province, country, created_timestamp, updated_timestamp, is_activ
+        FROM erp.stores 
+        ORDER BY updated_timestamp ASC
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-07-13 09:12:59,342 | ERROR | Store pipeline failed
+Traceback (most recent call last):
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "is_activ" does not exist
+LINE 3: ...nce, country, created_timestamp, updated_timestamp, is_activ
+                                                               ^
+HINT:  Perhaps you meant to reference the column "stores.is_active".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/pandas/io/sql.py", line 1679, in execute
+    return execute_function(sql, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "is_activ" does not exist
+LINE 3: ...nce, country, created_timestamp, updated_timestamp, is_activ
+                                                               ^
+HINT:  Perhaps you meant to reference the column "stores.is_active".
+
+[SQL: 
+        SELECT
+            store_id, store_name, city, province, country, created_timestamp, updated_timestamp, is_activ
+        FROM erp.stores 
+        ORDER BY updated_timestamp ASC
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/ingestion/pipelines/store_pipeline.py", line 22, in store_pipeline
+    df = extract(SOURCE_TABLE)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/ingestion/extraction/extractor.py", line 51, in extract
+    return pd.read_sql(
+           ^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/pandas/io/sql.py", line 730, in read_sql
+    return pandas_sql.read_query(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/pandas/io/sql.py", line 1856, in read_query
+    result = self.execute(sql, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/pandas/io/sql.py", line 1681, in execute
+    raise DatabaseError(f"Execution failed on sql '{sql}': {exc}") from exc
+pandas.errors.DatabaseError: Execution failed on sql '
+        SELECT
+            store_id, store_name, city, province, country, created_timestamp, updated_timestamp, is_activ
+        FROM erp.stores 
+        ORDER BY updated_timestamp ASC
+        ': (psycopg2.errors.UndefinedColumn) column "is_activ" does not exist
+LINE 3: ...nce, country, created_timestamp, updated_timestamp, is_activ
+                                                               ^
+HINT:  Perhaps you meant to reference the column "stores.is_active".
+
+[SQL: 
+        SELECT
+            store_id, store_name, city, province, country, created_timestamp, updated_timestamp, is_activ
+        FROM erp.stores 
+        ORDER BY updated_timestamp ASC
+        ]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-07-13 09:13:23,067 | INFO | Store pipeline started
+2026-07-13 09:13:23,110 | INFO | Full load
+2026-07-13 09:13:23,126 | INFO | Store data extracted
+2026-07-13 09:13:23,129 | INFO | erp.stores validation passed.
+2026-07-13 09:13:23,130 | INFO | Extracted 25 records from erp.stores
+2026-07-13 09:13:24,183 | INFO | stores.parquet is uploaded at: raw/stores/load_date=20260713/stores.parquet_20260713091323.parquet
+2026-07-13 09:13:24,199 | INFO | incremental timestamp updated
+2026-07-13 09:13:24,199 | INFO | Store pipeline completed

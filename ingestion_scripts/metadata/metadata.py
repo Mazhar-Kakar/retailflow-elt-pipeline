@@ -1,6 +1,6 @@
 import pandas as pd
 from sqlalchemy import text
-from ingestion.database.connection import engine
+from ingestion_scripts.database.connection import engine
 import logging
 
 logger = logging.getLogger(__name__)

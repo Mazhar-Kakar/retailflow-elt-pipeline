@@ -1,22 +1,22 @@
 import pandas as pd
-from ingestion.extraction.extractor import extract
-from ingestion.metadata.metadata import update_last_loaded_timestamp
-from ingestion.validation.validator import validate
-from ingestion.load.s3_loader import s3_upload
-from ingestion.logs.logger import setup_logging
+from ingestion_scripts.extraction.extractor import extract
+from ingestion_scripts.metadata.metadata import update_last_loaded_timestamp
+from ingestion_scripts.validation.validator import validate
+from ingestion_scripts.load.s3_loader import s3_upload
+from ingestion_scripts.logs.logger import setup_logging
 import logging
 
 setup_logging()
 logger = logging.getLogger(__name__)
 
 
-SOURCE_TABLE = "erp.customers"
-DATASET = "customers"
+SOURCE_TABLE = "erp.stores"
+DATASET = "stores"
 
-def customer_pipeline():
-    
+def store_pipeline():
+
     try:
-        logger.info("Customer pipeline started")
+        logger.info("Store pipeline started")
         
         # Extract
         df = extract(SOURCE_TABLE)
@@ -25,7 +25,7 @@ def customer_pipeline():
             logger.info(f"No new records found for {SOURCE_TABLE}.")
             return
         
-        logger.info("Customer data extracted")
+        logger.info("Store data extracted")
         
         
         # validate
@@ -44,16 +44,15 @@ def customer_pipeline():
         )
         logger.info("incremental timestamp updated")
         
-        logger.info("Customer pipeline completed")
+        logger.info("Store pipeline completed")
         
     except Exception:
-        logger.exception("Customer pipeline failed")
+        logger.exception("Store pipeline failed")
         raise
 
 
 if __name__ == "__main__":
-    customer_pipeline()
-
+    store_pipeline()
 
 
             

@@ -13,3 +13,4 @@ PASSWORD = os.getenv("DB_PASSWORD")
 engine = create_engine(
     f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
 )
+

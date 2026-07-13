@@ -1,9 +1,9 @@
 import pandas as pd
 from sqlalchemy import text
 import logging
-from ingestion.database.connection import engine
-from ingestion.metadata.metadata import get_last_loaded_timestamp 
-from ingestion.validation.validator import load_validation_config
+from ingestion_scripts.database.connection import engine
+from ingestion_scripts.metadata.metadata import get_last_loaded_timestamp 
+from ingestion_scripts.validation.validator import load_validation_config
 
 logger = logging.getLogger(__name__)
 

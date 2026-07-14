@@ -188,7 +188,7 @@ The project generates business-ready metrics such as:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/retailflow-elt-pipeline.git
+git clone https://github.com/Mazhar-Kakar/retailflow-elt-pipeline.git
 ```
 
 ### Install Dependencies

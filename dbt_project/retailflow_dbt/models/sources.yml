@@ -12,3 +12,21 @@ sources:
       - name: products
       - name: stores 
 
+  - name: staging
+    database: retailflow
+    schema: staging
+
+    tables:
+      - name: stg_customers  # enabled
+      - name: stg_orders
+      - name: stg_order_items
+      - name: stg_products
+      - name: stg_stores
+  
+  - name: intermediate
+    database: retailflow
+    schema: intermediate
+
+    tables:
+      - name: int_order_details
+

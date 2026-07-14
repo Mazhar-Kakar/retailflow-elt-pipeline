@@ -1,11 +1,15 @@
 {{ config(
     materialized='view',
-    schema='staging',
+    schema='staging'
 ) }}
 
-WITH cleaned_customers AS (
+WITH source_data AS (
+    SELECT *
+    FROM {{ source('bronze', 'customers') }}
+),
+cleaned_data AS (
     SELECT 
-        CAST(customer_id AS INT) AS customer_id,
+        customer_id,
         TRIM(first_name) AS first_name,
         TRIM(last_name) AS last_name,
         CASE
@@ -15,14 +19,11 @@ WITH cleaned_customers AS (
         TRIM(city) AS city,
         TRIM(province) AS province,
         TRIM(country) AS country,
-        TO_TIMESTAMP_NTZ(created_timestamp) AS created_timestamp,
-        TO_TIMESTAMP_NTZ(updated_timestamp) AS updated_timestamp,
-        CASE 
-            WHEN LOWER(TRIM(is_active)) = 'y' THEN TRUE
-            ELSE FALSE 
-        END AS is_active
-    FROM {{ source('bronze', 'customers') }}
+        created_timestamp,
+        updated_timestamp,
+        {{clean_is_active('is_active')}} AS is_active
+    FROM source_data
 )
-SELECT
-    *
-FROM cleaned_customers
+
+SELECT *
+FROM cleaned_data

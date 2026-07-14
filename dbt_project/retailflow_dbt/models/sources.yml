@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: retailflow
+    schema: bronze
+
+    tables:
+      - name: customers  # enabled
+      - name: orders
+      - name: order_items
+      - name: products
+      - name: stores 
+

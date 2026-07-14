@@ -1,0 +1,105 @@
+[0m11:06:12.286210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x710f07a31ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x710f07fee600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x710f0760f4a0>]}
+
+
+============================== 11:06:12.288541 | aed9656e-d58d-4a67-9dcf-59ab5bcf5c67 ==============================
+[0m11:06:12.288541 [info ] [MainThread]: Running with dbt=1.11.12
+[0m11:06:12.288976 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'printer_width': '80', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'profiles_dir': '/home/mazhar-kakar/.dbt', 'warn_error': 'None', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'target_path': 'None', 'use_colors': 'True', 'log_cache_events': 'False', 'debug': 'False', 'empty': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'invocation_command': 'dbt init', 'fail_fast': 'False', 'log_format': 'default', 'log_path': 'logs', 'version_check': 'True', 'introspect': 'True'}
+[0m11:06:22.712995 [debug] [MainThread]: Starter project path: /home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m11:06:22.718637 [info ] [MainThread]: 
+Your new dbt project "retailflow_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m11:06:22.719523 [info ] [MainThread]: Setting up your profile.
+[0m11:06:27.374491 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:06:27.374924 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:06:27.375179 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:11:17.666273 [info ] [MainThread]: Profile retailflow_dbt written to /home/mazhar-kakar/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m11:11:17.667984 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 305.41748, "process_in_blocks": "149936", "process_kernel_time": 0.237511, "process_mem_max_rss": "207852", "process_out_blocks": "9056", "process_user_time": 3.635519}
+[0m11:11:17.669355 [debug] [MainThread]: Command `dbt init` succeeded at 11:11:17.669121 after 305.42 seconds
+[0m11:11:17.670198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x710ecf1a0920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x710f06c7cef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x710f06c164b0>]}
+[0m11:11:17.671074 [debug] [MainThread]: Flushing usage events
+[0m11:11:19.725788 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:11:31.997064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7424d36c5070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7424d41d3d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7424d2e38860>]}
+
+
+============================== 11:11:32.000372 | 37aed9dc-83f6-4787-a87b-0bc2f782491e ==============================
+[0m11:11:32.000372 [info ] [MainThread]: Running with dbt=1.11.12
+[0m11:11:32.000973 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'partial_parse': 'True', 'target_path': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'quiet': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'debug': 'False', 'introspect': 'True', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'indirect_selection': 'eager', 'profiles_dir': '/home/mazhar-kakar/.dbt', 'cache_selected_only': 'False', 'log_path': 'logs', 'empty': 'None', 'printer_width': '80', 'version_check': 'True', 'use_colors': 'True', 'no_print': 'None'}
+[0m11:11:32.036557 [info ] [MainThread]: dbt version: 1.11.12
+[0m11:11:32.037352 [info ] [MainThread]: python version: 3.12.13
+[0m11:11:32.038041 [info ] [MainThread]: python path: /home/mazhar-kakar/Documents/retailflow-elt-pipeline/.venv/bin/python3
+[0m11:11:32.039099 [info ] [MainThread]: os info: Linux-6.8.0-124-generic-x86_64-with-glibc2.35
+[0m11:11:32.627395 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:11:32.627951 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:11:32.628345 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:11:32.671445 [info ] [MainThread]: Using profiles dir at /home/mazhar-kakar/.dbt
+[0m11:11:32.671765 [info ] [MainThread]: Using profiles.yml file at /home/mazhar-kakar/.dbt/profiles.yml
+[0m11:11:32.672086 [info ] [MainThread]: Using dbt_project.yml file at /home/mazhar-kakar/Documents/retailflow-elt-pipeline/dbt_project/dbt_project.yml
+[0m11:11:32.672409 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m11:11:32.673031 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.7119707, "process_in_blocks": "13440", "process_kernel_time": 0.14881, "process_mem_max_rss": "208184", "process_out_blocks": "72", "process_user_time": 3.359725}
+[0m11:11:32.673520 [debug] [MainThread]: Command `dbt debug` failed at 11:11:32.673438 after 0.71 seconds
+[0m11:11:32.673831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7424d52124e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74249dad4f80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7424d26ab350>]}
+[0m11:11:32.674095 [debug] [MainThread]: Flushing usage events
+[0m11:11:34.012715 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:56:19.686898 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6566aea690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6567567bf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f65661d0890>]}
+
+
+============================== 11:56:19.691389 | 02016c79-4d6b-4a66-9ac4-6b11d590df44 ==============================
+[0m11:56:19.691389 [info ] [MainThread]: Running with dbt=1.11.12
+[0m11:56:19.692535 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/home/mazhar-kakar/.dbt', 'partial_parse': 'True', 'target_path': 'None', 'warn_error': 'None', 'quiet': 'False', 'printer_width': '80', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'log_path': 'logs', 'log_cache_events': 'False', 'static_parser': 'True', 'write_json': 'True', 'debug': 'False', 'use_experimental_parser': 'False', 'use_colors': 'True', 'version_check': 'True', 'fail_fast': 'False', 'no_print': 'None', 'empty': 'False', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'log_format': 'default'}
+[0m11:56:19.693526 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/mazhar-kakar/Documents/retailflow-elt-pipeline/dbt_project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:56:19.694907 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.057912145, "process_in_blocks": "424", "process_kernel_time": 0.123483, "process_mem_max_rss": "99904", "process_out_blocks": "16", "process_user_time": 1.412093}
+[0m11:56:19.695672 [debug] [MainThread]: Command `dbt run` failed at 11:56:19.695477 after 0.06 seconds
+[0m11:56:19.696118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f65658e9700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f65668dfe30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f65658b71d0>]}
+[0m11:56:19.696686 [debug] [MainThread]: Flushing usage events
+[0m11:56:21.849930 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:57:39.450560 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79a07634e6f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79a0775f0dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79a0767a2b40>]}
+
+
+============================== 11:57:39.453276 | 7fc9cfdc-3527-4d21-b5f6-95446a966d54 ==============================
+[0m11:57:39.453276 [info ] [MainThread]: Running with dbt=1.11.12
+[0m11:57:39.453752 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'use_colors': 'True', 'empty': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run', 'profiles_dir': '/home/mazhar-kakar/.dbt', 'fail_fast': 'False', 'log_cache_events': 'False', 'quiet': 'False', 'write_json': 'True', 'no_print': 'None', 'log_format': 'default', 'indirect_selection': 'eager', 'version_check': 'True', 'log_path': 'logs', 'cache_selected_only': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'printer_width': '80'}
+[0m11:57:39.454228 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/mazhar-kakar/Documents/retailflow-elt-pipeline/dbt_project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m11:57:39.454859 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.04022031, "process_in_blocks": "0", "process_kernel_time": 0.089637, "process_mem_max_rss": "100020", "process_out_blocks": "8", "process_user_time": 0.878447}
+[0m11:57:39.455254 [debug] [MainThread]: Command `dbt run` failed at 11:57:39.455183 after 0.04 seconds
+[0m11:57:39.455550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79a075b9df70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79a0775bfe60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79a0768da630>]}
+[0m11:57:39.455843 [debug] [MainThread]: Flushing usage events
+[0m11:57:44.715576 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:00:02.092934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773c189de630>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773c1850d040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773c18913380>]}
+
+
+============================== 12:00:02.095765 | c4bde96c-ea5a-4e60-84e4-75f8f90c9109 ==============================
+[0m12:00:02.095765 [info ] [MainThread]: Running with dbt=1.11.12
+[0m12:00:02.096205 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'target_path': 'None', 'log_path': 'logs', 'debug': 'False', 'indirect_selection': 'eager', 'profiles_dir': '/home/mazhar-kakar/.dbt', 'introspect': 'True', 'use_colors': 'True', 'fail_fast': 'False', 'static_parser': 'True', 'log_format': 'default', 'printer_width': '80', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'partial_parse': 'True', 'log_cache_events': 'False', 'write_json': 'True', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m12:00:02.096718 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/mazhar-kakar/Documents/retailflow-elt-pipeline/dbt_project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:00:02.097269 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.04100602, "process_in_blocks": "0", "process_kernel_time": 0.079867, "process_mem_max_rss": "99988", "process_out_blocks": "16", "process_user_time": 1.003334}
+[0m12:00:02.097709 [debug] [MainThread]: Command `dbt run` failed at 12:00:02.097611 after 0.04 seconds
+[0m12:00:02.097978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773c18572660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773c18081d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773c19eba660>]}
+[0m12:00:02.098222 [debug] [MainThread]: Flushing usage events
+[0m12:00:08.428652 [debug] [MainThread]: An error was encountered while trying to flush usage events
